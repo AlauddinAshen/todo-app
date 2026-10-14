@@ -1,85 +1,99 @@
-# Cognifyz Technologies - Full Stack Development Internship
+# Todo Application
 
-A collection of projects completed as part of my **Full Stack Development Internship at Cognifyz Technologies**.
+A simple and user-friendly Todo Application built with Node.js, Express, SQLite, and vanilla JavaScript. It helps users manage daily tasks, track progress, and stay organized through a clean web interface.
 
-The tasks were completed progressively, starting with basic Express.js
-server interaction and form handling and moving towards REST APIs,
-database integration, and user authentication.
+## Features
 
----
+- **User Authentication** – Register and log in to your account securely.
+- **Task Management** – Create, view, update, and delete tasks.
+- **Task Status** – Track tasks based on their completion status.
+- **Database Storage** – Store application data using SQLite.
+- **Session Management** – Maintain user sessions during navigation.
+- **Responsive Interface** – Simple and clean interface for easy interaction.
+- **Password Security** – Hash passwords using bcrypt.
+- **Backend Integration** – Handle application requests using Express.js.
 
-## Internship Overview
+## Tech Stack
 
-**Organization:** Cognifyz Technologies  
-**Domain:** Full Stack Development  
-**Tasks Completed:** 6
-
-### Progress
-
-| Level | Task | Topic | Status |
-|-------|------|-------|--------|
-| Level 1 | Task 1 | HTML Structure & Basic Server | Completed |
-| Level 1 | Task 2 | Validation & Temporary Storage | Completed |
-| Level 2 | Task 3 | CSS Styling & Responsive Design | Completed |
-| Level 2 | Task 4 | Validation & DOM Manipulation | Completed |
-| Level 3 | Task 5 | REST API & Front-End Interaction | Completed |
-| Level 3 | Task 6 | Database & Authentication | Completed |
-
----
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** SQLite (better-sqlite3)
+- **Authentication:** bcrypt
+- **Session Management:** express-session
 
 ## Project Structure
 
 ```text
-Cognifyz/
-│
-├── README.md
-│
-├── Task_1/
-│   ├── README.md
-│   ├── package.json
-│   ├── server.js
-│   └── views/
-│       └── index.ejs
-│
-├── Task_2/
-│   ├── README.md
-│   ├── package.json
-│   ├── server.js
-│   └── views/
-│       └── index.ejs
-│
-├── Task_3/
-│   ├── README.md
-│   ├── package.json
-│   ├── server.js
-│   ├── public/
-│   │   └── styles.css
-│   └── views/
-│       └── index.ejs
-│
-├── Task_4/
-│   ├── README.md
-│   ├── package.json
-│   ├── server.js
-│   ├── public/
-│   │   ├── app.js
-│   │   └── styles.css
-│   └── views/
-│       └── index.ejs
-│
-├── Task_5/
-│   ├── README.md
-│   ├── package.json
-│   ├── server.js
-│   └── public/
-│       └── app.js
-│
-└── Task_6/
-    ├── README.md
-    ├── package.json
-    ├── server.js
-    ├── public/
-    │   ├── index.html
-    │   ├── script.js
-    │   └── style.css
-    └── .env.example
+todo-app/
+├── public/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
+
+## Installation and Setup
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git (optional)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/AlauddinAshen/todo-app.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd todo-app
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Application
+
+```bash
+npm start
+```
+
+### 5. Open in Your Browser
+
+Visit:
+
+```text
+http://localhost:3000
+```
+
+Check `server.js` for the configured port if the application uses a different one.
+
+## Database
+
+The application uses SQLite to store data locally. The database is managed using the `better-sqlite3` package.
+
+## Future Improvements
+
+- Add task search and filtering.
+- Introduce task priorities and due dates.
+- Add reminders and notifications.
+- Improve mobile responsiveness.
+- Deploy the application to a cloud hosting platform.
+
+## License
+
+This project is available for learning and personal use. Add a specific open-source license if you intend to distribute it under particular terms.
+
+---
+
+**Todo Application** — Organize your tasks, track your progress, and stay productive.
