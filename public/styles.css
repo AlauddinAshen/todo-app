@@ -1,0 +1,294 @@
+:root {
+    /* Larger Area = Lesser Intensity Hierarchy */
+    --bg-canvas: #f4f1ea;             /* 70%: Softest Muted Warm Gray */
+    --bg-panel: #ffffff;              /* 20%: Crisp White Main Panel */
+    --bg-card: #faf8f5;               /* 10%: Light Tinted Sub-components */
+    
+    /* Text Hierarchy */
+    --text-primary: #1f2937;          /* Dark Slate for Sharp Readability */
+    --text-muted: #6b7280;            /* Neutral Gray */
+
+    /* Flashy Interactive Accents (Electric Emerald & Amber) */
+    --accent-emerald: #10b981;
+    --accent-emerald-hover: #059669;
+    --emerald-glow: rgba(16, 185, 129, 0.35);
+
+    --accent-amber: #f59e0b;
+    --accent-amber-hover: #d97706;
+    --amber-glow: rgba(245, 158, 11, 0.35);
+
+    /* Borders & Elevated Shadows */
+    --border-subtle: #e8e2d5;
+    --border-card: #e5e7eb;
+    --shadow-panel: 0 20px 40px rgba(31, 41, 55, 0.05);
+    --shadow-card: 0 4px 12px rgba(31, 41, 55, 0.03);
+
+    /* Danger Actions */
+    --danger-bg: #fee2e2;
+    --danger-color: #ef4444;
+    --danger-glow: rgba(239, 68, 68, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 60px 20px;
+    background: var(--bg-canvas); /* Low-intensity dim light canvas */
+    min-height: 100vh;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   20% AREA: MAIN PANELS (CLEAN WHITE WITH SOFT EMBOSSED BORDERS)
+   ========================================================================== */
+.auth-card, #todoSection {
+    background: var(--bg-panel);
+    padding: 38px;
+    border-radius: 24px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-panel);
+}
+
+.auth-card h2, .todo-header h2 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ==========================================================================
+   10% AREA: INPUTS & SUB-COMPONENTS
+   ========================================================================== */
+.auth-card input, #task {
+    padding: 13px 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--border-card);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.auth-card input:focus, #task:focus {
+    background: #ffffff;
+    border-color: var(--accent-emerald);
+    box-shadow: 0 0 12px var(--emerald-glow);
+}
+
+/* ==========================================================================
+   FLASHY BUTTONS WITH VIBRANT GRADIENTS & SHINY HOVERS
+   ========================================================================== */
+.auth-card button, #formSubmit input[type="submit"] {
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-emerald) 0%, #34d399 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--emerald-glow);
+}
+
+.auth-card button:hover, #formSubmit input[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--accent-emerald-hover) 0%, #10b981 100%);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 22px var(--emerald-glow);
+}
+
+#toggleAuth {
+    background: linear-gradient(135deg, var(--accent-amber) 0%, #fbbf24 100%);
+    color: #ffffff;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px var(--amber-glow);
+}
+
+#toggleAuth:hover {
+    background: linear-gradient(135deg, var(--accent-amber-hover) 0%, #f59e0b 100%);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 22px var(--amber-glow);
+}
+
+#authMessage, #todoMessage {
+    text-align: center;
+    min-height: 20px;
+    font-size: 0.88rem;
+    color: var(--danger-color);
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   TODO LIST ITEMS (FLOATING LIGHT CARDS WITH GLOW HOVERS)
+   ========================================================================== */
+.todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+#logoutButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background: var(--danger-bg);
+    color: var(--danger-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background: var(--danger-color);
+    color: white;
+    box-shadow: 0 0 12px var(--danger-glow);
+}
+
+#formSubmit {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#task {
+    flex: 1;
+}
+
+#todos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-card);
+    animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.todo-item:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    border-color: var(--accent-emerald);
+    box-shadow: 0 6px 18px var(--emerald-glow);
+}
+
+.todo-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-emerald);
+    cursor: pointer;
+}
+
+.todo-item span {
+    flex: 1;
+    word-break: break-word;
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.todo-item button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.todo-item button:first-of-type {
+    background: #e5e7eb;
+    color: var(--text-primary);
+}
+
+.todo-item button:first-of-type:hover {
+    background: var(--accent-amber);
+    color: #ffffff;
+    box-shadow: 0 0 10px var(--amber-glow);
+}
+
+.todo-item button:last-of-type {
+    background: var(--danger-bg);
+    color: var(--danger-color);
+}
+
+.todo-item button:last-of-type:hover {
+    background: var(--danger-color);
+    color: white;
+    box-shadow: 0 0 10px var(--danger-glow);
+}
+
+.edit-input {
+    flex: 1;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 2px solid var(--accent-emerald);
+    border-radius: 8px;
+    color: var(--text-primary);
+    outline: none;
+}
+
+/* Animations */
+.todo-item.deleting {
+    animation: slideOut 0.25s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
